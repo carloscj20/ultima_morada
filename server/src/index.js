@@ -9,6 +9,9 @@ var app = express();
 //Configurar puerto:
 app.set('port', port);
 
+//Configurar tipos de datos admitidos (para la query insert into):
+app.use(express.json())
+
 //Configurar rutas:
 app.use('/api', require('./routes/rutas'));
 
@@ -20,3 +23,7 @@ app.listen(port, (error) => {
         console.log('Servidor iniciado en el puerto:', port);
     }
 });
+
+//Para iniciar el server con la db conectada, posicionarse en:
+//C:\Users\Usuario\Desktop\html-css\angular-project\server\src>
+//Luego hacer un node .\index.js (se puede hacer con tab)
