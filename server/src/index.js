@@ -35,3 +35,7 @@ app.listen(port, (error) => {
 
 //Al iniciar angular con ng serve -o, la direccion del localhost es 4200.
 //Usar http://localhost:3000/api/?
+
+//Para instalar las dependencias, posicionarse en /server
+//npm i --save-dev nodemon
+//npm i express mysql

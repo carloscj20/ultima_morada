@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const conexion = require('/Users/Usuario/Desktop/html-css/angular-project/server/src/conexion')
+const conexion = require('../conexion')
 
 //Asignar todas las rutas (y peticiones de cliente):
 //Cada router.get() equivale a una query de mysql
