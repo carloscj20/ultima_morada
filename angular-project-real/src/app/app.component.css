@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 25px;
+  
+}
+
+.header {
+  background: linear-gradient(45deg, #737373, #b3b3b3);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: -8px;
+  height: 100px;
+  padding: 5px 10%;
+  position: fixed;
+  width: 100%;
+
+}
+
+.navbar li {
+  list-style-type: none;
+  display: inline;
+  padding: 0 20px;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+
+/* Efecto de pasar el mouse sobre cada elemento del navbar. */
+/* Se puede cambiar el color de las letras facilmente. */
+.header a:hover {
+  color: #007399;
+}
+.header .page-name:hover {
+  color: #1ac6ff;
+}

@@ -26,7 +26,7 @@ app.listen(port, (error) => {
 
 //Para iniciar el server con la db conectada, posicionarse en:
 //C:\Users\Usuario\Desktop\html-css\angular-project\server\src>
-//Luego hacer un node .\index.js (se puede hacer con tab)
+//Luego hacer un npm run dev (ahora si funciona :D cambie una ruta en el package.json)
 
 //Al iniciar angular con ng serve -o, la direccion del localhost es 4200.
 //Usar http://localhost:3000/api/?
