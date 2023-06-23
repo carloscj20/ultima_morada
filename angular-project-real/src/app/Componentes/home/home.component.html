@@ -1,1 +1,27 @@
-<p>inicio works!</p>
+<p>Datos</p>
+
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="id">Id</th>
+        <th scope="nombre">Nombre</th>
+        <th scope="editar">Editar</th>
+        <th scope="borrar">Borrar</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let dato of ListarDato">
+        <!-- Para cambiar los datos, 1ero ir a srv1.service.ts y cambiar los nombres de las columnas desde ahi. -->
+        <!-- Luego cambiar aca abajo. -->
+        <th scope="row">1</th>
+        <td>{{dato.id_tipo_piedra}}</td>
+        <td>{{dato.nombre_piedra}}</td>
+        <td>
+            <button type="button" class="btn btn-primary">Editar</button>
+        </td>
+        <td>
+            <button type="button" class="btn btn-danger">Borrar</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>

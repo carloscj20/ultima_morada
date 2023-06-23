@@ -6,7 +6,10 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './Componentes/home/home.component';
 import { UpdateComponent } from './Componentes/update/update.component';
 import { InsertComponent } from './Componentes/insert/insert.component';
+import { Srv1Service } from './Servicios/srv1.service';
 
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -17,7 +20,9 @@ import { InsertComponent } from './Componentes/insert/insert.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

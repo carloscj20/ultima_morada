@@ -15,6 +15,11 @@ app.use(express.json())
 //Configurar rutas:
 app.use('/api', require('./routes/rutas'));
 
+    // Lógica para obtener datos de MySQL
+app.get('/api', (req, res) => {
+
+});
+
 //Iniciar express:
 app.listen(port, (error) => {
     if (error) {
