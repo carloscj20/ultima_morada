@@ -1,10 +1,13 @@
 require('./conexion');
+const bodyParser = require('body-parser');
 
-var express = require('express');
-var port = (process.env.port || 3000); //Recupera el puerto donde esta trabajando el servidor
+const express = require('express');
+const port = (process.env.port || 3000); //Recupera el puerto donde esta trabajando el servidor
 
 //Configurar el express
-var app = express();
+const app = express();
+app.use(bodyParser.json());
+
 
 //Configurar puerto:
 app.set('port', port);
@@ -15,7 +18,7 @@ app.use(express.json())
 //Configurar rutas:
 app.use('/api', require('./routes/rutas'));
 
-    // Lógica para obtener datos de MySQL
+// Lógica para obtener datos de MySQL
 app.get('/api', (req, res) => {
 
 });
@@ -39,3 +42,6 @@ app.listen(port, (error) => {
 //Para instalar las dependencias, posicionarse en /server
 //npm i --save-dev nodemon
 //npm i express mysql
+
+//Ademas de las dependencias, hacer un:
+//ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'root';

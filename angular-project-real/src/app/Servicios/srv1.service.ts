@@ -30,13 +30,21 @@ export class Srv1Service {
   }
 
   //Modificar dato
-  editDato(id: string, equipo: Dato){
-    return this.http.put(this.url + '/' + id, equipo);
+  editDato(id: string, dato1: Dato){
+    const url = `${this.url}/${id}`;
+    const body = dato1;
+
+    console.log(dato1.nombre_piedra)
+    console.log(body)
+
+    //id retorna numero, dato1.nombre_piedra retorna el nombre de la nueva piedra
+    return this.http.put(url, dato1);
   }
 }
 
 //Interfaz que valida los datos
-export interface Dato{
-  id_tipo_piedra?: string;
-  nombre_piedra?: string;
+//Quité el :? de los datos de abajo para probar algunas cosas (y parece que esta funcionando :D)
+export interface Dato {
+  id_tipo_piedra: string;
+  nombre_piedra: string;
 }

@@ -1,1 +1,20 @@
-<p>update works!</p>
+<div class="container">
+    <p>Actualizar Datos</p>
+    <div class="row">
+        <div class="col-sm-6">
+            <form>
+                <div class="mb3">
+                    <label class="form-label">Nuevo ID:</label>
+                    <input [(ngModel)]="datos.id_tipo_piedra" type="text" class="form-control" name="id_tipo_piedra">
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Nuevo nombre:</label>
+                    <input [(ngModel)]="datos.nombre_piedra" type="text" class="form-control" name="nombre_piedra">
+                </div>
+
+                <button (click)="update()" class="btn btn-primary">Finalizar</button>
+            </form>
+        </div>
+    </div>
+</div>

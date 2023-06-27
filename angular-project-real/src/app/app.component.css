@@ -9,7 +9,7 @@
 }
 
 .header {
-  background: linear-gradient(45deg, #737373, #b3b3b3);
+  border-bottom: 5px solid #80dfff;
   display: flex;
   justify-content: space-between;
   align-items: center;

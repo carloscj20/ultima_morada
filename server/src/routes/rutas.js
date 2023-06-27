@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const conexion = require('../conexion')
+const conexion = require('../conexion');
 
 //Asignar todas las rutas (y peticiones de cliente):
 //Cada router.get() equivale a una query de mysql
@@ -7,7 +7,7 @@ const conexion = require('../conexion')
 
 //Listar todos los tipos de piedra (READ):
 router.get('/', (req, res) => {
-    let sql = 'SELECT * FROM tipo_piedra'
+    let sql = 'SELECT * FROM tipo_piedra ORDER BY id_tipo_piedra'
     conexion.query(sql, (err, rows, fields) => {
         if (err) throw err;
         else {
@@ -54,16 +54,24 @@ router.delete('/:id', (req, res) => {
 
 //Modificar un dato de la tabla tipo_piedra(UPDATE):
 router.put('/:id', (req, res) => {
-    const { id } = req.params
-    let sql = `UPDATE tipo_piedra
-                SET id_tipo_piedra = ${id}
-                WHERE id_tipo_piedra = ${id};`
-    conexion.query(sql, (err, rows, fields) => {
-        if (err) throw err;
-        else {
-            res.json({ status: 'Tabla modificada exitosamente!' })
-        }
-    })
+    const { id } = req.params;
+    
+    const nombrePiedra = req.body.Dato[0][0].nombre_piedra;
+    console.log(nombrePiedra); //Esto devuelve Piedra trueno
+    Z
+    console.log(req.params) //Eso funciona bien, devuelve el id
+
+    
+    // let sql = `UPDATE tipo_piedra
+    //             SET id_tipo_piedra = ${req.params},
+    //                 nombre_piedra = ${Dato.nombre_piedra}
+    //             WHERE id_tipo_piedra = ${id};`
+    // conexion.query(sql, (err, rows, fields) => {
+    //     if (err) throw err;
+    //     else {
+    //         res.json({ status: 'Tabla modificada exitosamente!' })
+    //     }
+    // })
 })
 
 //Exportar la ruta:
