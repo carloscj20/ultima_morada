@@ -5,9 +5,9 @@ const conexion = require('../conexion');
 //Cada router.get() equivale a una query de mysql
 //---------------------------------------------------
 
-//Listar todos los tipos de piedra (READ):
+//Listar todos los tipos de empleado:
 router.get('/', (req, res) => {
-    let sql = 'SELECT * FROM tipo_piedra ORDER BY id_tipo_piedra'
+    let sql = 'SELECT * FROM empleado ORDER BY Antiguedad'
     conexion.query(sql, (err, rows, fields) => {
         if (err) throw err;
         else {
@@ -16,7 +16,7 @@ router.get('/', (req, res) => {
     })
 })
 
-//Listar un tipo de piedra (segun su id):
+/*Listar un tipo de piedra (segun su id):
 router.get('/:id', (req, res) => {
     const { id } = req.params
     let sql = 'SELECT * FROM tipo_piedra WHERE id_tipo_piedra = ?'
@@ -26,28 +26,29 @@ router.get('/:id', (req, res) => {
             res.json(rows)
         }
     })
-})
+})*/
 
-//agregar piedra (UPDATE):
+//agregar Empleado (insert):
 router.post('/', (req, res) => {
-    const { id_tipo_piedra, nombre_piedra } = req.body
-    let sql = `INSERT INTO tipo_piedra (id_tipo_piedra, nombre_piedra) VALUES ('${id_tipo_piedra}', '${nombre_piedra}');`
+    const { RUT, Nombre, Apellido, Direccion, Telefono, Antiguedad, Sueldo, Tipo_trabajo } = req.body
+    let sql = `INSERT INTO empleado (RUT, Nombre, Apellido, Direccion, Telefono, Antiguedad, Sueldo, Tipo_trabajo)
+                VALUES ('${RUT}', '${Nombre}','${Apellido}'),'${Direccion}','${Telefono}','${Antiguedad}','${Sueldo}','${Tipo_trabajo}';`
     conexion.query(sql, (err, rows, fields) => {
         if (err) throw err;
         else {
-            res.json({ status: 'Tipo de  piedra agregada!' })
+            res.json({ status: 'Empleado agregado pe causita!' })
         }
     })
 })
 
-//Eliminar tipo de piedra (DELETE):
+//Eliminar Empleado(DELETE):
 router.delete('/:id', (req, res) => {
-    const { id } = req.params
-    let sql = `DELETE FROM tipo_piedra WHERE id_tipo_piedra = '${id}';`
+    const { rut } = req.params
+    let sql = `DELETE FROM empleado WHERE RUT = '${rut}';`
     conexion.query(sql, (err, rows, fields) => {
         if (err) throw err;
         else {
-            res.json({ status: 'Equipo eliminado!' })
+            res.json({ status: 'Empleado eliminado o despedio!' })
         }
     })
 })
